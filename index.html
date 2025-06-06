@@ -1,57 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lazy Load Video Chat</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatHub Embedded</title>
   <style>
     body, html {
-      margin: 0; padding: 0; height: 100vh;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      font-family: Arial, sans-serif;
-    }
-    #iframeContainer {
-      width: 100%;
-      height: 80vh;
-      border: 1px solid #ccc;
-      margin-top: 10px;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
     }
     iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
-    button {
-      padding: 12px 24px;
-      font-size: 16px;
-      cursor: pointer;
-    }
   </style>
 </head>
 <body>
-  <button id="startBtn">Start Video Chat</button>
-  <div id="iframeContainer">
-    <!-- Initially empty -->
-  </div>
-
-  <script>
-    const btn = document.getElementById('startBtn');
-    const container = document.getElementById('iframeContainer');
-
-    btn.addEventListener('click', () => {
-      // Remove any existing iframe first (optional)
-      container.innerHTML = '';
-
-      // Create iframe with camera & mic permission
-      const iframe = document.createElement('iframe');
-      iframe.src = 'https://nayakchathub.onrender.com';
-      iframe.allow = 'camera; microphone; fullscreen';
-      container.appendChild(iframe);
-
-      // Disable the button after starting video chat
-      btn.disabled = true;
-      btn.textContent = 'Video Chat Started';
-    });
-  </script>
+  <iframe 
+    src="https://nayakchathub.onrender.com"
+    allow="camera; microphone; fullscreen">
+  </iframe>
 </body>
 </html>
+
